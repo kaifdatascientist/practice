@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Function to calculate simple interest
+calculate_interest() {
+    # Read principal amount
+    echo -n "Enter the principal amount: $"
+    read principal
+
+    # Read rate of interest
+    echo -n "Enter the rate of interest per annum (%): "
+    read rate
+
+    # Read time period
+    echo -n "Enter the time period (in years): "
+    read time
+
+    # Calculate simple interest
+    interest=$(echo "scale=2; $principal * $rate * $time / 100" | bc)
+
+    # Print the result
+    echo "Simple Interest: $interest"
+}
+
+# Main function
+main() {
+    echo "Simple Interest Calculator"
+    calculate_interest
+}
+
+# Call the main function
+main
